@@ -32,9 +32,11 @@ const Row: React.FC<RowProps> = ({
   return (
     <View style={styles.row}>
       {rowData.map((square, colIndex) => (
-        <View style={styles.square}>
+        <View
+          style={styles.square}
+          key={colIndex.toString() + rowIndex.toString()}
+        >
           <Square
-            key={colIndex.toString() + rowIndex.toString()}
             value={square}
             selectedSquare={selectedSquare}
             lockedSquares={lockedSquares}
